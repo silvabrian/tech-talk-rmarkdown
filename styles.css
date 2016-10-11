@@ -1,0 +1,29 @@
+/*.section .reveal .state-background {
+    background-image: url("uptake_background.png");
+}*/
+
+.reveal {
+  font-family: "Lato", sans-serif;
+}
+
+.reveal p, .reveal li {
+  font-size: 24px;
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+    font-family: "News Cycle", Impact, sans-serif;
+}
+
+.reveal pre code {
+  font-size: 16px;
+}
+
+.present h3 {
+  background: rgba(151, 153, 155, 0.4);
+  font-size: 36px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-right: -100%;
+  margin-left: -100%;
+  padding-left: 100%;
+}
