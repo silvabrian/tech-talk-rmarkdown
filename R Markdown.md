@@ -9,13 +9,19 @@ Outline
 ===
 
 - Getting Started
-- R Markdown Background
-- R Markdown for Reports
-- R Markdown for Presentations
+- Background
+- R Notebooks
+- Generating Reports
+- Generating Presentations
+- Customization
 
 
 Getting Started
 ===
+
+Clone the repo from here:
+
+[Github Repo](https://github.com/silvabrian/tech-talk-rmarkdown)
 
 You will need to run the following code before the talk:
 
@@ -36,19 +42,25 @@ if(length(notInstalled) > 0) {
 }
 ```
 
-Also, if you haven't done so already, clone the repo from here:
-
+<p style="font-size: 14px">
+If you have the .Rpres file open in RStudio, you can just click the run button.
+</p>
 
 Note: It is highly recommended that you follow along in RStudio as it works nicely with R Markdown
-
 
 R Markdown Background
 ===
 
+From RStudio's website:
+<center>
+#### _Turn your analyses into high quality documents, reports, presentations and dashboards._
+</center>
+
 Benefits:
-- Automatically HTML, PDF, and Word documents through R
-- Allows for interactive visuals
-- Supports Markdown, HTML, and LaTeX _(and maybe some others)_
+- Go from doing data analysis directly to a report within the same window
+- Automatically generate HTML, PDF, and Word documents through R
+- Supports Markdown, HTML, and LaTeX for text formatting
+- Supports R, python, bash, etc. for code execution
 
 This whole presentation was created using R Markdown!
 
@@ -56,13 +68,22 @@ This whole presentation was created using R Markdown!
 Markdown Basics
 ===
 
-Markdown format is used in many places: Wikipedia, Github, Confluence, etc.
+<center>
+<p>R Markdown is converted to Markdown which is then converted to the desired document type</p>
 
-Here is a good guide explaining some common things you may want to do in Markdown:
+![](RMarkdownFlow.png)
+</center>
 
-[Quick Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf)
+- Markdown format is used in many places: Wikipedia, Github, Confluence, etc. 
+- Markdown will get you 90% of the way there for adding text and other content in R Markdown.
 
-R Markdown allows you to embed R code as well using chunks like the following:
+Here is a good guide explaining some common things you may want to do in Markdown: [Markdown Reference](https://en.support.wordpress.com/markdown-quick-reference/)
+
+
+R Markdown Additions
+===
+
+R Markdown builds on top of Markdown by allowing you to execute code written in R, python, bash, and other languages.  Here is what an example "code chunk" looks like:
 <!-- Disregard the weird formatting in markdown, this was added so the code 
 would display properly in HTML -->
 ```
@@ -71,7 +92,7 @@ plot(x, y)
 ```
 ```
 
-You can also run R code inline like the following:
+You can also run R code inline like this:
 
 <!-- Disregard the weird formatting in markdown, this was added so the code 
 would display properly in HTML -->
@@ -79,12 +100,4 @@ would display properly in HTML -->
 Today's date is `r now()`
 ```
 
-Simple R Markdown HTML Report
-===
-
-Open the file _simpleReport.Rmd_ and follow along.
-
-
-
-
-
+Let's go through a simple example of how you might use R Markdown.  If you have the latest RStudio preview, open up the file [simpleNotebook.Rmd](simpleNotebook.Rmd), otherwise you can follow along.

@@ -1,5 +1,5 @@
 .section .reveal .state-background {
-    background: #212721;
+    background: rgba(33, 39, 33, 0.95);
 }
 
 .reveal {
@@ -18,7 +18,7 @@
   font-size: 16px;
 }
 
-.present h3 {
+.reveal h3 {
   background: rgba(151, 153, 155, 0.4);
   font-size: 36px;
   padding-top: 20px;
@@ -26,4 +26,8 @@
   margin-right: -100%;
   margin-left: -100%;
   padding-left: 100%;
+}
+
+.reveal h4 {
+  font-size: 28px;
 }
