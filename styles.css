@@ -1,9 +1,9 @@
-/*.section .reveal .state-background {
-    background-image: url("uptake_background.png");
-}*/
+.section .reveal .state-background {
+    background: #212721;
+}
 
 .reveal {
-  font-family: "Lato", sans-serif;
+  font-family: forza, "Lato", sans-serif;
 }
 
 .reveal p, .reveal li {
@@ -11,7 +11,7 @@
 }
 
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
-    font-family: "News Cycle", Impact, sans-serif;
+    font-family: vitesse, "News Cycle", Impact, sans-serif;
 }
 
 .reveal pre code {
