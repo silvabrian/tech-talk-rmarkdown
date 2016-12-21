@@ -32,7 +32,7 @@ plt
 ```
 
 ### Table of the Data
-<!-- Problem 5: Modify the code chunk below to hide the code print out and display the table correctly in a table. -->
+<!-- Problem 5: Modify the code chunk below to hide the code print out and display the table correctly -->
 ```{r}
 t <- xtable(head(DT))
 print(t, type = 'html', include.rownames = F)

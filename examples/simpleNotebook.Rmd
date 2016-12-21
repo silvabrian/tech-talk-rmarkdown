@@ -46,7 +46,7 @@ print x
 
 ```
 
-#### Problem 1: Create a code chunk below showing how to calculate the median mpg without evaluating the expression [Helpful guide](http://yihui.name/knitr/options/)
+#### Problem 1: Create a code chunk below showing how to calculate the median mpg without actually evaluating the expression [Helpful guide](http://yihui.name/knitr/options/)
 ```{r}
 # Your code goes here
 
