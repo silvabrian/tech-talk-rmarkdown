@@ -1,0 +1,23 @@
+Simple Report
+--
+
+Plot of some Random Data
+```{r, echo = F, results = 'hide', fig.align = 'center'}
+
+plt <- dygraph(DT)
+
+if (styled){
+  
+  plt <- plt %>% 
+    dySeries(name = 'signal_1', label = 'Signal 1', color = '#FE00FF', drawPoints = T) %>%
+    dySeries(name = 'signal_2', label = 'Signal 2', color = '#FFFF00', drawPoints = T)
+  
+}
+
+```
+
+```{r, echo = F, fig.align = 'center'}
+
+plt
+
+```

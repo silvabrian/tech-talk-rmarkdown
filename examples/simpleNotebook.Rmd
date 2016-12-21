@@ -1,0 +1,64 @@
+---
+title: "Simple R Notebook"
+output: html_notebook
+---
+
+<!-- When we want code to be evaluated, but not displayed we use echo = F -->
+<!-- By default, R Markdown is evaluated in a fresh R environment, so we have to
+load our libraries at the start.  We will also discuss other ways of evaluating 
+R Markdown where you can provide an environment -->
+```{r, echo = F}
+
+library(data.table)
+
+```
+
+#### You can very easily load in data and print out the summary
+```{r}
+
+data(mtcars)
+
+DT <- as.data.table(mtcars)
+
+DT[, summary(mpg)]
+
+```
+
+#### You can embed plots or other images
+<!-- Note that you can use the fig.align option to change the alignment of the image -->
+```{r, echo = F, fig.align = 'center'}
+sink('/dev/null')
+DT[, plot(x = hp, 
+          y = mpg, 
+          main = 'HP vs MPG', 
+          xlab = 'Horsepower', 
+          ylab = 'Miles Per Gallon')]
+sink()
+```
+
+#### In case you want to use python you can do that too. Not sure why you wouldn't just use Jupyter.
+```{python}
+x = [1, 2, 3]
+
+x.append(4)
+
+print x
+
+```
+
+#### Problem 1: Create a code chunk below showing how to calculate the median mpg without evaluating the expression [Helpful guide](http://yihui.name/knitr/options/)
+```{r}
+# Your code goes here
+
+```
+
+#### Problem 2: Make this plot smaller (right now the default is 7x5)
+```{r, echo = F, fig.align = 'center'}
+sink('/dev/null')
+DT[, plot(x = wt, 
+          y = mpg, 
+          main = 'Weight vs MPG', 
+          xlab = 'Weight', 
+          ylab = 'Miles Per Gallon')]
+sink()
+```

@@ -1,0 +1,181 @@
+Tech Talk: R Markdown
+===
+author: Brian Silva
+date: Dec. 2016
+autosize: true
+css: styles.css
+
+<!-- Load some fonts that we want to use -->
+<link href="https://fonts.googleapis.com/css?family=Lato|Slabo+27px" rel="stylesheet">
+
+Outline
+===
+
+- Getting Started
+- Background
+- EDA with R Notebooks
+- Generating Reports
+- Customization
+
+
+Getting Started
+===
+
+Clone the repo from here:
+
+[Github Repo](https://github.com/silvabrian/tech-talk-rmarkdown)
+
+You will need to run the following code before the talk:
+
+
+```r
+packages <- c('data.table', 'knitr', 'rmarkdown')
+
+notInstalled <- packages[! sapply(X = packages, 
+                                  FUN = require, 
+                                  character.only = T)]
+
+if(length(notInstalled) > 0) {
+  
+  install.packages(notInstalled)
+  
+  sapply(X = notInstalled, FUN = require, character.only = T)
+  
+}
+```
+
+<p style="font-size: 14px">
+If you have the .Rpres file open in RStudio, you can just click the run button.
+</p>
+
+Note: It is highly recommended that you follow along in RStudio as it works nicely with R Markdown
+
+R Markdown Background
+===
+
+From RStudio's website:
+<center>
+#### _Turn your analyses into high quality documents, reports, presentations and dashboards._
+</center>
+
+Benefits:
+- Go from doing data analysis directly to a report within the same window
+- Automatically generate HTML, PDF, and Word documents through R
+- Supports Markdown, HTML, and LaTeX for text formatting
+- Supports R, python, bash, etc. for code execution
+
+This whole presentation was created using R Markdown!
+
+
+Markdown Basics
+===
+
+<center>
+<p>R Markdown is converted to Markdown which is then converted to the desired document type</p>
+
+![](RMarkdownFlow.png)
+</center>
+
+- Markdown format is used in many places: Wikipedia, Github, Confluence, etc. 
+- Markdown will get you 90% of the way there for adding text and other content in R Markdown
+
+Here is a good guide explaining some common things you may want to do in Markdown: [Markdown Reference](https://en.support.wordpress.com/markdown-quick-reference/)
+
+
+R Markdown Additions
+===
+
+R Markdown builds on top of Markdown by allowing you to execute code written in R, python, bash, and other languages.  Here is what an example "code chunk" looks like:
+<!-- Disregard the weird formatting in markdown, this was added so the code 
+would display properly in HTML -->
+```
+```{r}
+plot(x, y)
+```
+```
+
+You can also run code inline like this:
+
+<!-- Disregard the weird formatting in markdown, this was added so the code 
+would display properly in HTML -->
+```
+Today's date is `r now()`
+```
+
+Here are a couple good data science use cases:
+
+- Exploratory data analysis (similar to IPython/Jupyter)
+- Generate a regular report using new data
+- Research-like paper with embedded plots and code
+
+We'll look at the first two during this talk
+
+Example 1: EDA with R Notebooks
+===
+incremental: true
+
+Let's go through a simple example of how you might use R Markdown for EDA.  Open up the file [simpleNotebook.Rmd](../examples/simpleNotebook.Rmd).
+
+Key Takeaways
+- Not quite up the quality of IPython/Jupyter
+- Nice-looking notebook view is only available when rendered to HTML
+
+Let's take a look at another use case
+
+
+Example 2: Reporting with R Markdown
+===
+incremental: true
+
+Let's go through a simple example of how you might use R Markdown for reporting.  Open up the following files:
+
+[simpleReport.Rmd](../examples/simpleReport.Rmd)
+[simpleReport.R](../examples/runSimpleReport.R) 
+
+Key Takeaways
+- You don't need to render an R Markdown file from the file itself
+- Really convenient when running a report on a regular basis
+- Can easily be integrated into an R package
+
+
+Example 3: Customization
+===
+incremental: true
+
+Let's go through a simple example of how you might customize your report.  Open up the following files:
+
+[simpleReport.Rmd](../examples/simpleReport.Rmd)
+[simpleReport.R](../examples/runSimpleReport.R) 
+[simpleReport.css](../examples/simpleReport.css)
+
+
+Lessons Learned
+===
+incremental: true
+
+While working with R Markdown it is easy to get stuck and sink large amounts of time into a small part of the report.  Here are some things I have learned that will hopefully save you hours of time.
+
+The Rmd file itself will not have access to variables in your RStudio environment
+- You either have to define the variables or load the packages in the rmd file itself or call the script from another function
+
+You can use LaTex, markdown, and HTML, but not together
+- I really just encourage you to use HTML only
+
+You don't need to host images online
+- R markdown does base64 encoding of images, which means that an image is converted into text and embedded directly into HTML
+
+    
+Lessons Learned Continued
+===
+incremental: true
+
+If you want to make multiple plots (dygraphs) in a loop it is very unintuitive
+- Check out the first part of this [answer](http://stackoverflow.com/a/17105758)
+
+For styling HTML code, get familiar with Chrome's 'Inspect' tool
+- Right click any element and select 'Inspect in Chrome, then make changes to HTML and CSS there
+- When it looks the way you want it, then go into R Markdown and make the changes there
+
+Embedding tables in R markdown is pretty simple with code chunk options
+- The results=‘asis’ option tells markdown to take the output of the R code and embed it directly into the HTML (or LaTex)
+- This means that you can have code that generates HTML or LaTex

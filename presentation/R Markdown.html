@@ -564,7 +564,7 @@ body {
 }
 
 .reveal {
-  font-family: forza, "Lato", sans-serif;
+  font-family: Lato, sans-serif;
 }
 
 .reveal p, .reveal li {
@@ -572,7 +572,7 @@ body {
 }
 
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
-    font-family: vitesse, "News Cycle", Impact, sans-serif;
+    font-family: 'Slabo 27px', serif;
 }
 
 .reveal pre code {
@@ -817,9 +817,10 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="linear" data-transition-speed="default">
-<h1>Tech Talk: R Markdown</h1><p>Brian Silva<br/>Nov. 2016</p>
+<h1>Tech Talk: R Markdown</h1><p>Brian Silva<br/>Dec. 2016</p>
 
 <div class="slideContent" >
+<p><link href="https://fonts.googleapis.com/css?family=Lato|Slabo+27px" rel="stylesheet"></p>
 
 </div>
 
@@ -830,9 +831,8 @@ hljs.initHighlightingOnLoad();
 <ul>
 <li>Getting Started</li>
 <li>Background</li>
-<li>R Notebooks</li>
+<li>EDA with R Notebooks</li>
 <li>Generating Reports</li>
-<li>Generating Presentations</li>
 <li>Customization</li>
 </ul>
 
@@ -908,7 +908,7 @@ If you have the .Rpres file open in RStudio, you can just click the run button.
 
 <ul>
 <li>Markdown format is used in many places: Wikipedia, Github, Confluence, etc. </li>
-<li>Markdown will get you 90% of the way there for adding text and other content in R Markdown.</li>
+<li>Markdown will get you 90% of the way there for adding text and other content in R Markdown</li>
 </ul>
 
 <p>Here is a good guide explaining some common things you may want to do in Markdown: <a href="https://en.support.wordpress.com/markdown-quick-reference/">Markdown Reference</a></p>
@@ -937,7 +937,115 @@ would display properly in HTML -->
 <pre><code>Today&#39;s date is `r now()`
 </code></pre>
 
-<p>Let&#39;s go through a simple example of how you might use R Markdown.  If you have the latest RStudio preview, open up the file <a href="simpleNotebook.Rmd">simpleNotebook.Rmd</a>, otherwise you can follow along.</p>
+<p>Here are a couple good data science use cases:</p>
+
+<ul>
+<li>Exploratory data analysis (similar to IPython/Jupyter)</li>
+<li>Generate a regular report using new data</li>
+<li>Research-like paper with embedded plots and code</li>
+</ul>
+
+<p>We&#39;ll look at the first two during this talk</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Example 1: EDA with R Notebooks</h3>
+<div class="slideContent" >
+<p>Let&#39;s go through a simple example of how you might use R Markdown for EDA.  Open up the file <a href="../examples/simpleNotebook.Rmd">simpleNotebook.Rmd</a>.</p>
+
+<p class="fragment">Key Takeaways</p>
+
+<ul>
+<li class="fragment">Not quite up the quality of IPython/Jupyter</li>
+<li class="fragment">Nice-looking notebook view is only available when rendered to HTML</li>
+</ul>
+
+<p class="fragment">Let&#39;s take a look at another use case</p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Example 2: Reporting with R Markdown</h3>
+<div class="slideContent" >
+<p>Let&#39;s go through a simple example of how you might use R Markdown for reporting.  Open up the following files:</p>
+
+<p class="fragment"><a href="../examples/simpleReport.Rmd">simpleReport.Rmd</a>
+<a href="../examples/runSimpleReport.R">simpleReport.R</a> </p>
+
+<p class="fragment">Key Takeaways</p>
+
+<ul>
+<li class="fragment">You don&#39;t need to render an R Markdown file from the file itself</li>
+<li class="fragment">Really convenient when running a report on a regular basis</li>
+<li class="fragment">Can easily be integrated into an R package</li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Example 3: Customization</h3>
+<div class="slideContent" >
+<p>Let&#39;s go through a simple example of how you might customize your report.  Open up the following files:</p>
+
+<p class="fragment"><a href="../examples/simpleReport.Rmd">simpleReport.Rmd</a>
+<a href="../examples/runSimpleReport.R">simpleReport.R</a> 
+<a href="../examples/simpleReport.css">simpleReport.css</a></p>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Lessons Learned</h3>
+<div class="slideContent" >
+<p>While working with R Markdown it is easy to get stuck and sink large amounts of time into a small part of the report.  Here are some things I have learned that will hopefully save you hours of time.</p>
+
+<p class="fragment">The Rmd file itself will not have access to variables in your RStudio environment</p>
+
+<ul>
+<li class="fragment">You either have to define the variables or load the packages in the rmd file itself or call the script from another function</li>
+</ul>
+
+<p class="fragment">You can use LaTex, markdown, and HTML, but not together</p>
+
+<ul>
+<li class="fragment">I really just encourage you to use HTML only</li>
+</ul>
+
+<p class="fragment">You don&#39;t need to host images online</p>
+
+<ul>
+<li class="fragment">R markdown does base64 encoding of images, which means that an image is converted into text and embedded directly into HTML</li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Lessons Learned Continued</h3>
+<div class="slideContent" >
+<p>If you want to make multiple plots (dygraphs) in a loop it is very unintuitive</p>
+
+<ul>
+<li class="fragment">Check out the first part of this answer (<a href="http://stackoverflow.com/a/17105758">http://stackoverflow.com/a/17105758</a>)</li>
+</ul>
+
+<p class="fragment">For styling HTML code, get familiar with Chrome&#39;s Inspect tool</p>
+
+<ul>
+<li class="fragment">Right click any element and select &ldquo;Inspect&rdquo; in Chrome, then make changes to HTML and CSS there</li>
+<li class="fragment">When it looks the way you want it, then go into R Markdown and make the changes there</li>
+</ul>
+
+<p class="fragment">Embedding tables in R markdown is pretty simple with code chunk options</p>
+
+<ul>
+<li class="fragment">The results=‘asis’ option tells markdown to take the output of the R code and embed it directly into the HTML (or LaTex)</li>
+<li class="fragment">This means that you can have R code that generates HTML or LaTex</li>
+</ul>
 
 </div>
 
