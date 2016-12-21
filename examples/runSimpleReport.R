@@ -19,6 +19,7 @@ DT <- data.table(dateTime = now() + rnorm(n = N, mean = 0, sd = 24 * 60 * 60),
 
 styled <- F
 
+#---- 
 # Example 2: Reporting with R Markdown
 
 # Use the rmarkdown function, render, to generate the HTML file
@@ -29,6 +30,7 @@ render(input = rmdPath,
        output_dir = '.')
 
 
+#---- 
 # Example 3: Customization
 
 # Add an additional argument to html_document to add styles
