@@ -2,11 +2,12 @@
 
 
 # Path to Rmd file
-rmdPath <- 'simpleReport.Rmd'
-cssPath <- 'simpleReport.css'
+rmdPath <- 'examples/simpleReport.Rmd'
+cssPath <- '../examples/simpleReport.css' # For some reason this has to be relative to the HTML
 
 # Load libraries
 library(dygraphs)
+library(xtable)
 library(rmarkdown)
 
 # Generate some timeseries data
