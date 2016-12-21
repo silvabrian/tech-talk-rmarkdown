@@ -16,6 +16,8 @@ Outline
 - EDA with R Notebooks
 - Generating Reports
 - Customization
+- Lessons Learned
+- Summary
 
 
 Getting Started
@@ -120,8 +122,8 @@ incremental: true
 Let's go through a simple example of how you might use R Markdown for EDA.  Open up the file [simpleNotebook.Rmd](../examples/simpleNotebook.Rmd).
 
 Key Takeaways
-- Definitely functional, but not quite up to the quality of IPython/Jupyter
-- Nice-looking notebook view is only available when rendered to HTML
+ - Definitely functional, but not quite up to the quality of IPython/Jupyter
+ - Nice-looking notebook view is only available when rendered to HTML
 
 Let's take a look at another use case
 
@@ -143,6 +145,7 @@ Key Takeaways
 
 Let's take a look at how we can customize this report
 
+
 Example 3: Customization
 ===
 incremental: true
@@ -155,12 +158,12 @@ Let's go through a simple example of how you might customize your report.  Open 
 
 [simpleReport.css](../examples/simpleReport.css)
 
+While working with R Markdown it is easy to get stuck and sink large amounts of time into a small part of the report.  On the next slide are some things I have learned that will hopefully save you hours of time.
+
 
 Lessons Learned
 ===
 incremental: true
-
-While working with R Markdown it is easy to get stuck and sink large amounts of time into a small part of the report.  Here are some things I have learned that will hopefully save you hours of time.
 
 The Rmd file itself will not have access to variables in your RStudio environment
 - You either have to define the variables or load the packages in the rmd file itself or call the script from another function
@@ -180,9 +183,22 @@ If you want to make multiple plots (dygraphs) in a loop it is very unintuitive
 - Check out the first part of this [answer](http://stackoverflow.com/a/17105758)
 
 For styling HTML code, get familiar with Chrome's 'Inspect' tool
-- Right click any element and select 'Inspect in Chrome, then make changes to HTML and CSS there
+- In Chrome, right click any element and select 'Inspect', then make changes to HTML and CSS there
 - When it looks the way you want it, then go into R Markdown and make the changes there
 
 Embedding tables in R markdown is pretty simple with code chunk options
 - The results=‘asis’ option tells markdown to take the output of the R code and embed it directly into the HTML (or LaTex)
 - This means that you can have code that generates HTML or LaTex
+
+
+Summary
+===
+
+The Good
+- Great for generating reports automatically with crontab and then emailing/pushing to remote git repo
+- HTML reports have a lot of flexibility to generate customized, interactive reports
+- Reports are self contained, so they are quite portable
+
+The Bad
+- R Notebooks are useful, but still lag behind IPhython/Jupyter
+- Depending on the type of file you want to create, markdown will act differently (HTML vs. PDF vs. Word)

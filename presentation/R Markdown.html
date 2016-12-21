@@ -840,6 +840,7 @@ hljs.initHighlightingOnLoad();
 <li>EDA with R Notebooks</li>
 <li>Generating Reports</li>
 <li>Customization</li>
+<li>Lessons Learned</li>
 </ul>
 
 </div>
@@ -1008,21 +1009,21 @@ would display properly in HTML -->
 
 <p class="fragment"><a href="../examples/simpleReport.css">simpleReport.css</a></p>
 
+<p class="fragment">While working with R Markdown it is easy to get stuck and sink large amounts of time into a small part of the report.  On the next slide are some things I have learned that will hopefully save you hours of time.</p>
+
 </div>
 
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Lessons Learned</h3>
 <div class="slideContent" >
-<p>While working with R Markdown it is easy to get stuck and sink large amounts of time into a small part of the report.  Here are some things I have learned that will hopefully save you hours of time.</p>
-
-<p class="fragment">The Rmd file itself will not have access to variables in your RStudio environment</p>
+<p>The Rmd file itself will not have access to variables in your RStudio environment</p>
 
 <ul>
 <li class="fragment">You either have to define the variables or load the packages in the rmd file itself or call the script from another function</li>
 </ul>
 
-<p class="fragment">You can use LaTex, markdown, and HTML, but not together</p>
+<p class="fragment">You can use LaTex, markdown, and HTML, but they don&#39;t play nicely together</p>
 
 <ul>
 <li class="fragment">I really just encourage you to use HTML only</li>
