@@ -1,3 +1,12 @@
+/*
+Problem 6: Modify simpleReport.Rmd and simpleReport.css to make them look better. Some ideas:
+- Add an additional plot to the report
+- Modify the CSS to change some of the text fonts (check out R Markdown.Rpres and styles.css for examples)
+- Modify the the background color being used in the dygraph
+- Modify the formatting of the HTML table (check out http://www.w3schools.com/css/css_table.asp for ideas)
+- Get some other ideas from http://rmarkdown.rstudio.com/gallery.html
+*/
+
 .dygraphs.html-widget, .dygraph-legend {
   background: #B3B3B3 !important;
 }

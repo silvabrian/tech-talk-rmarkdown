@@ -1,8 +1,17 @@
 Simple Report
 --
 
-Plot of some Random Data
-```{r, echo = F, results = 'hide', fig.align = 'center'}
+
+<!-- Problem 4: Fill in the folling information to be dynamically updated when the report is run -->
+Author: <!-- Insert the user who ran the report -->
+
+Date: <!-- Insert today's date -->
+
+
+<div align = 'center'> <!-- More consistent results centering by using HTML -->
+
+### Some Very Insightful Data
+```{r, echo = F, results = 'hide'}
 
 plt <- dygraph(DT)
 
@@ -16,8 +25,16 @@ if (styled){
 
 ```
 
-```{r, echo = F, fig.align = 'center'}
+```{r, echo = F, fig.width = 8}
 
 plt
 
 ```
+
+### Table of the Data
+<!-- Problem 5: Modify the code chunk below to hide the code print out and display the table correctly in a table. -->
+```{r}
+t <- xtable(head(DT))
+print(t, type = 'html', include.rownames = F)
+```
+</div>
