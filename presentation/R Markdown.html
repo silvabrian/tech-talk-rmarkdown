@@ -841,6 +841,7 @@ hljs.initHighlightingOnLoad();
 <li>Generating Reports</li>
 <li>Customization</li>
 <li>Lessons Learned</li>
+<li>Summary</li>
 </ul>
 
 </div>
@@ -1020,10 +1021,10 @@ would display properly in HTML -->
 <p>The Rmd file itself will not have access to variables in your RStudio environment</p>
 
 <ul>
-<li class="fragment">You either have to define the variables or load the packages in the rmd file itself or call the script from another function</li>
+<li class="fragment">You either have to define the variables or load the packages in the Rmd file itself or call the script from another function</li>
 </ul>
 
-<p class="fragment">You can use LaTex, markdown, and HTML, but they don&#39;t play nicely together</p>
+<p class="fragment">You can use LaTeX, markdown, and HTML, but they don&#39;t play nicely together</p>
 
 <ul>
 <li class="fragment">I really just encourage you to use HTML only</li>
@@ -1050,15 +1051,52 @@ would display properly in HTML -->
 <p class="fragment">For styling HTML code, get familiar with Chrome&#39;s &#39;Inspect&#39; tool</p>
 
 <ul>
-<li class="fragment">Right click any element and select &#39;Inspect in Chrome, then make changes to HTML and CSS there</li>
+<li class="fragment">In Chrome, right click any element and select &#39;Inspect&#39;, then make changes to HTML and CSS there</li>
 <li class="fragment">When it looks the way you want it, then go into R Markdown and make the changes there</li>
 </ul>
 
 <p class="fragment">Embedding tables in R markdown is pretty simple with code chunk options</p>
 
 <ul>
-<li class="fragment">The results=‘asis’ option tells markdown to take the output of the R code and embed it directly into the HTML (or LaTex)</li>
-<li class="fragment">This means that you can have code that generates HTML or LaTex</li>
+<li class="fragment">The results=‘asis’ option tells markdown to take the output of the R code and embed it directly into the HTML (or LaTeX)</li>
+<li class="fragment">This means that you can have code that generates HTML or LaTeX</li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Summary</h3>
+<div class="slideContent" >
+<p>The Good</p>
+
+<ul>
+<li>Great for generating reports automatically with crontab and then emailing/pushing to remote git repo</li>
+<li>HTML reports have a lot of flexibility to generate customized, interactive reports</li>
+<li>Reports are self contained, so they are quite portable</li>
+</ul>
+
+<p>The Bad</p>
+
+<ul>
+<li>R Notebooks are useful, but still lag behind IPython/Jupyter</li>
+<li>Depending on the type of file you want to create, markdown will act differently (HTML vs. PDF vs. Word)</li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="linear" data-transition-speed="default">
+<h3>Bonus Example: Presentations</h3>
+<div class="slideContent" >
+<p>Let&#39;s go through an example of how you might use R Markdown for presentations.  Open up the file <a href="R%20Markdown.Rpres">R Markdown.Rpres</a>.</p>
+
+<p>Key Takeaways</p>
+
+<ul>
+<li>Again, slight differences in syntax</li>
+<li>Probably not as easy as just making slides in PowerPoint</li>
+<li>Could be useful if presentations need to be automatically generated</li>
 </ul>
 
 </div>

@@ -165,9 +165,9 @@ Lessons Learned
 incremental: true
 
 The Rmd file itself will not have access to variables in your RStudio environment
-- You either have to define the variables or load the packages in the rmd file itself or call the script from another function
+- You either have to define the variables or load the packages in the Rmd file itself or call the script from another function
 
-You can use LaTex, markdown, and HTML, but they don't play nicely together
+You can use LaTeX, markdown, and HTML, but they don't play nicely together
 - I really just encourage you to use HTML only
 
 You don't need to host images online
@@ -186,8 +186,8 @@ For styling HTML code, get familiar with Chrome's 'Inspect' tool
 - When it looks the way you want it, then go into R Markdown and make the changes there
 
 Embedding tables in R markdown is pretty simple with code chunk options
-- The results=‘asis’ option tells markdown to take the output of the R code and embed it directly into the HTML (or LaTex)
-- This means that you can have code that generates HTML or LaTex
+- The results=‘asis’ option tells markdown to take the output of the R code and embed it directly into the HTML (or LaTeX)
+- This means that you can have code that generates HTML or LaTeX
 
 
 Summary
@@ -199,5 +199,17 @@ The Good
 - Reports are self contained, so they are quite portable
 
 The Bad
-- R Notebooks are useful, but still lag behind IPhython/Jupyter
+- R Notebooks are useful, but still lag behind IPython/Jupyter
 - Depending on the type of file you want to create, markdown will act differently (HTML vs. PDF vs. Word)
+
+
+Bonus Example: Presentations
+===
+incremental: true
+
+Let's go through an example of how you might use R Markdown for presentations.  Open up the file [R Markdown.Rpres](R Markdown.Rpres).
+
+Key Takeaways
+- Again, slight differences in syntax
+- Probably not as easy as just making slides in PowerPoint
+- Could be useful if presentations need to be automatically generated
