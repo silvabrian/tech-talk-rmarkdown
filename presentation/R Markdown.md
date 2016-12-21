@@ -29,7 +29,7 @@ You will need to run the following code before the talk:
 
 
 ```r
-packages <- c('data.table', 'knitr', 'rmarkdown')
+packages <- c('data.table', 'knitr', 'rmarkdown', 'xtable')
 
 notInstalled <- packages[! sapply(X = packages, 
                                   FUN = require, 
@@ -81,6 +81,8 @@ Markdown Basics
 
 Here is a good guide explaining some common things you may want to do in Markdown: [Markdown Reference](https://en.support.wordpress.com/markdown-quick-reference/)
 
+You can also access a Markdown Quick Reference in RStudio by going to Help > Markdown Quick Reference
+
 
 R Markdown Additions
 ===
@@ -117,7 +119,7 @@ incremental: true
 Let's go through a simple example of how you might use R Markdown for EDA.  Open up the file [simpleNotebook.Rmd](../examples/simpleNotebook.Rmd).
 
 Key Takeaways
-- Not quite up the quality of IPython/Jupyter
+- Definitely functional, but not quite up to the quality of IPython/Jupyter
 - Nice-looking notebook view is only available when rendered to HTML
 
 Let's take a look at another use case
@@ -130,6 +132,7 @@ incremental: true
 Let's go through a simple example of how you might use R Markdown for reporting.  Open up the following files:
 
 [simpleReport.Rmd](../examples/simpleReport.Rmd)
+
 [simpleReport.R](../examples/runSimpleReport.R) 
 
 Key Takeaways
@@ -137,6 +140,7 @@ Key Takeaways
 - Really convenient when running a report on a regular basis
 - Can easily be integrated into an R package
 
+Let's take a look at how we can customize this report
 
 Example 3: Customization
 ===
@@ -145,7 +149,9 @@ incremental: true
 Let's go through a simple example of how you might customize your report.  Open up the following files:
 
 [simpleReport.Rmd](../examples/simpleReport.Rmd)
+
 [simpleReport.R](../examples/runSimpleReport.R) 
+
 [simpleReport.css](../examples/simpleReport.css)
 
 
@@ -158,7 +164,7 @@ While working with R Markdown it is easy to get stuck and sink large amounts of 
 The Rmd file itself will not have access to variables in your RStudio environment
 - You either have to define the variables or load the packages in the rmd file itself or call the script from another function
 
-You can use LaTex, markdown, and HTML, but not together
+You can use LaTex, markdown, and HTML, but they don't play nicely together
 - I really just encourage you to use HTML only
 
 You don't need to host images online

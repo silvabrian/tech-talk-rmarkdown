@@ -593,6 +593,10 @@ body {
   font-size: 28px;
 }
 
+.reveal li {
+  font-size: 20px;
+}
+
 
   </style>
   
@@ -820,6 +824,8 @@ hljs.initHighlightingOnLoad();
 <h1>Tech Talk: R Markdown</h1><p>Brian Silva<br/>Dec. 2016</p>
 
 <div class="slideContent" >
+<!-- Load some fonts that we want to use -->
+
 <p><link href="https://fonts.googleapis.com/css?family=Lato|Slabo+27px" rel="stylesheet"></p>
 
 </div>
@@ -848,7 +854,7 @@ hljs.initHighlightingOnLoad();
 
 <p>You will need to run the following code before the talk:</p>
 
-<pre><code class="r">packages &lt;- c(&#39;data.table&#39;, &#39;knitr&#39;, &#39;rmarkdown&#39;)
+<pre><code class="r">packages &lt;- c(&#39;data.table&#39;, &#39;knitr&#39;, &#39;rmarkdown&#39;, &#39;xtable&#39;)
 
 notInstalled &lt;- packages[! sapply(X = packages, 
                                   FUN = require, 
@@ -913,6 +919,8 @@ If you have the .Rpres file open in RStudio, you can just click the run button.
 
 <p>Here is a good guide explaining some common things you may want to do in Markdown: <a href="https://en.support.wordpress.com/markdown-quick-reference/">Markdown Reference</a></p>
 
+<p>You can also access a Markdown Quick Reference in RStudio by going to Help &gt; Markdown Quick Reference</p>
+
 </div>
 
 </section>
@@ -958,7 +966,7 @@ would display properly in HTML -->
 <p class="fragment">Key Takeaways</p>
 
 <ul>
-<li class="fragment">Not quite up the quality of IPython/Jupyter</li>
+<li class="fragment">Definitely functional, but not quite up to the quality of IPython/Jupyter</li>
 <li class="fragment">Nice-looking notebook view is only available when rendered to HTML</li>
 </ul>
 
@@ -972,8 +980,9 @@ would display properly in HTML -->
 <div class="slideContent" >
 <p>Let&#39;s go through a simple example of how you might use R Markdown for reporting.  Open up the following files:</p>
 
-<p class="fragment"><a href="../examples/simpleReport.Rmd">simpleReport.Rmd</a>
-<a href="../examples/runSimpleReport.R">simpleReport.R</a> </p>
+<p class="fragment"><a href="../examples/simpleReport.Rmd">simpleReport.Rmd</a></p>
+
+<p class="fragment"><a href="../examples/runSimpleReport.R">simpleReport.R</a> </p>
 
 <p class="fragment">Key Takeaways</p>
 
@@ -983,6 +992,8 @@ would display properly in HTML -->
 <li class="fragment">Can easily be integrated into an R package</li>
 </ul>
 
+<p class="fragment">Let&#39;s take a look at how we can customize this report</p>
+
 </div>
 
 </section>
@@ -991,9 +1002,11 @@ would display properly in HTML -->
 <div class="slideContent" >
 <p>Let&#39;s go through a simple example of how you might customize your report.  Open up the following files:</p>
 
-<p class="fragment"><a href="../examples/simpleReport.Rmd">simpleReport.Rmd</a>
-<a href="../examples/runSimpleReport.R">simpleReport.R</a> 
-<a href="../examples/simpleReport.css">simpleReport.css</a></p>
+<p class="fragment"><a href="../examples/simpleReport.Rmd">simpleReport.Rmd</a></p>
+
+<p class="fragment"><a href="../examples/runSimpleReport.R">simpleReport.R</a> </p>
+
+<p class="fragment"><a href="../examples/simpleReport.css">simpleReport.css</a></p>
 
 </div>
 
@@ -1030,13 +1043,13 @@ would display properly in HTML -->
 <p>If you want to make multiple plots (dygraphs) in a loop it is very unintuitive</p>
 
 <ul>
-<li class="fragment">Check out the first part of this answer (<a href="http://stackoverflow.com/a/17105758">http://stackoverflow.com/a/17105758</a>)</li>
+<li class="fragment">Check out the first part of this <a href="http://stackoverflow.com/a/17105758">answer</a></li>
 </ul>
 
-<p class="fragment">For styling HTML code, get familiar with Chrome&#39;s Inspect tool</p>
+<p class="fragment">For styling HTML code, get familiar with Chrome&#39;s &#39;Inspect&#39; tool</p>
 
 <ul>
-<li class="fragment">Right click any element and select &ldquo;Inspect&rdquo; in Chrome, then make changes to HTML and CSS there</li>
+<li class="fragment">Right click any element and select &#39;Inspect in Chrome, then make changes to HTML and CSS there</li>
 <li class="fragment">When it looks the way you want it, then go into R Markdown and make the changes there</li>
 </ul>
 
@@ -1044,7 +1057,7 @@ would display properly in HTML -->
 
 <ul>
 <li class="fragment">The results=‘asis’ option tells markdown to take the output of the R code and embed it directly into the HTML (or LaTex)</li>
-<li class="fragment">This means that you can have R code that generates HTML or LaTex</li>
+<li class="fragment">This means that you can have code that generates HTML or LaTex</li>
 </ul>
 
 </div>
